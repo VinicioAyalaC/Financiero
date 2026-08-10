@@ -7,6 +7,9 @@ public class Cuenta {
 	private double saldoActual;
 	private String tipo;
 	
+	//
+	private Cliente propietario;
+	
 	
 	
 	
@@ -34,15 +37,32 @@ public class Cuenta {
 	public String getTipo() {		return tipo;	}
 
 	public void setTipo(String tipo) {	this.tipo = tipo;	}
+		
+	//
+	public Cliente getPropietario() {	return propietario;	}
+
+	public void setPropietario(Cliente propietario) {	this.propietario = propietario;	}
+	
+	
 	
 	
 	
 	// Metodos
 	public void imprimir() {
-		System.out.println("Id:       		" + this.id);
-		System.out.println("Tipo:     		" + this.tipo);
-		System.out.println("Saldo actual:   " + this.saldoActual);
+		System.out.println("Id:       		" + id);
+		System.out.println("Tipo:     		" + tipo);
+		System.out.println("Saldo actual:   " + saldoActual);
+
+		//
+		System.out.println("Cedula cliente:     " + propietario.getCedula());
+		System.out.println("Nombre cliente:     " + propietario.getNombre());
+		System.out.println("Cedula apellido:    " + propietario.getApellido());
+	
 	}
+
+
+
+
 	
 	
 
