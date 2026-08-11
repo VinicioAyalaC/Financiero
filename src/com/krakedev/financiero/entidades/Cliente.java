@@ -20,6 +20,13 @@ public class Cliente {
 
 
 
+	public Cliente() {
+		
+	}
+
+
+
+
 	// Getters & Setters
 	public String getCedula() {		return cedula;	}
 
