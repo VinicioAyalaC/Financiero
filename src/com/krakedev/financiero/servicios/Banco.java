@@ -1,9 +1,12 @@
 package com.krakedev.financiero.servicios;
 
+import com.krakedev.financiero.entidades.Cliente;
+import com.krakedev.financiero.entidades.Cuenta;
+
 public class Banco {
 	
 	// Atributos
-	private int ultimoCodigo = 1000;
+	private int ultimoCodigo;
 
 	
 	
@@ -11,7 +14,7 @@ public class Banco {
 	
 	// Constructor
 	public Banco() {
-	
+		this.ultimoCodigo = 1000;
 	}
 	
 	
@@ -28,5 +31,22 @@ public class Banco {
 	
 	
 	
+	
+	// Metodos
+	public Cuenta  crearCuenta(Cliente cliente) {
+		
+		String codigoStr = ultimoCodigo + "";
+		ultimoCodigo++;
+		
+		Cuenta cuenta = new Cuenta(codigoStr);
+		
+		cuenta.setPropietario(cliente);
+		
+		return cuenta;
+		
+	}
+	
+	
+	
 
-}
+}//
