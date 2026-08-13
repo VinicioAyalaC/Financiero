@@ -53,4 +53,23 @@ class BancoTest {
         assertEquals(cliente, cuenta.getPropietario());
         assertEquals("0102030405", cuenta.getPropietario().getCedula());
     }
-}
+    
+    
+    @Test
+    void depositar_saldo() {
+        Banco banco = new Banco();
+        Cliente cliente = new Cliente("0102030405", "Ana", "Pérez");
+        Cuenta cuenta = banco.crearCuenta(cliente);
+
+        boolean resultado = banco.depositar(100.0, cuenta);
+
+        assertTrue(resultado);
+        assertEquals(100.0, cuenta.getSaldoActual());
+    }
+    
+    
+    
+    
+    
+    
+}//

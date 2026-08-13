@@ -44,7 +44,23 @@ public class Banco {
 		
 		return cuenta;
 		
-	}
+	}// fin de crearCuenta
+	
+	
+	public boolean depositar(double monto, Cuenta cuenta) {
+		
+		if(monto > 0) {
+			double nuevoSaldo = cuenta.getSaldoActual()+monto; 
+			cuenta.setSaldoActual(nuevoSaldo);
+			return true;
+		}	else {
+			return false;
+		}
+		
+	}// fin de depositar
+	
+	
+	
 	
 	
 	
