@@ -73,6 +73,20 @@ public class Banco {
 		}// fin de retirar
 	
 	
+	public boolean transferir(Cuenta origen, Cuenta destino, double monto) {
+	    
+		boolean nuevoRetiro = retirar(monto, origen);
+
+	    if (!nuevoRetiro) {
+	        return false;
+	    }else {
+	    	depositar(monto, destino);
+	    	return true;
+	    }
+
+	}// fin de transferencia
+	
+	
 	
 
 }//

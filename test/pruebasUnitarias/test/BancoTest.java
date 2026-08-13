@@ -81,6 +81,22 @@ class BancoTest {
         assertEquals(150.0, cuenta.getSaldoActual());
     }
     
+    @Test
+    void transferir_saldo() {
+        Banco banco = new Banco();
+        Cliente cliente1 = new Cliente("0102030405", "Ana", "Pérez");
+        Cliente cliente2 = new Cliente("0605040302", "Luis", "Gómez");
+        Cuenta origen = banco.crearCuenta(cliente1);
+        Cuenta destino = banco.crearCuenta(cliente2);
+        banco.depositar(300.0, origen);
+
+        boolean resultado = banco.transferir(origen, destino, 100.0);
+
+        assertTrue(resultado);
+        assertEquals(200.0, origen.getSaldoActual());
+        assertEquals(100.0, destino.getSaldoActual());
+    }
+    
     
     
 }//
