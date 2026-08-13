@@ -68,7 +68,18 @@ class BancoTest {
     }
     
     
-    
+    @Test
+    void retirar_saldo() {
+        Banco banco = new Banco();
+        Cliente cliente = new Cliente("0102030405", "Ana", "Pérez");
+        Cuenta cuenta = banco.crearCuenta(cliente);
+        banco.depositar(200.0, cuenta);
+
+        boolean resultado = banco.retirar(50.0, cuenta);
+
+        assertTrue(resultado);
+        assertEquals(150.0, cuenta.getSaldoActual());
+    }
     
     
     
